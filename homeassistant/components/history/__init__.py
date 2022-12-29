@@ -306,7 +306,7 @@ def _entities_may_have_state_changes_after(
     for entity_id in entity_ids:
         state = hass.states.get(entity_id)
 
-        if state is None or state.last_changed > start_time:
+        if state is None or state.last_updated > start_time:
             return True
 
     return False
